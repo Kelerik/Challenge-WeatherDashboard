@@ -15,6 +15,164 @@
       <link rel="stylesheet" href="./assets/css/style.css" />
    </head>
    <body>
+      <header class="p-2">
+         <h1 class="text-center text-light">Weather Dashboard</h1>
+      </header>
+
+      <main class="container">
+         <div class="row pt-2">
+            <!-- sidebar -->
+            <div class="col-12 col-md-3">
+               <h2>Search for a City:</h2>
+               <!-- input -->
+               <form id="city-input">
+                  <input
+                     type="text"
+                     class="form-control"
+                     placeholder="City Name"
+                  />
+                  <button type="submit" class="btn btn-primary">Search</button>
+                  <!-- divider -->
+                  <div class="border border-1 border-secondary"></div>
+                  <!-- history -->
+                  <div>
+                     <!-- TODO -->
+                  </div>
+               </form>
+            </div>
+
+            <!-- weather content -->
+            <div class="col">
+               <!-- current weather -->
+               <div class="border border-1 border-dark p-2">
+                  <h2>
+                     <span id="current-city"></span>
+                     <span id="current-date"></span>
+                     <span id="current-icon"></span>
+                  </h2>
+                  <p>Temp: <span id="current-temp"></span></p>
+                  <p>Wind: <span id="current-wind"></span></p>
+                  <p>Humidity: <span id="current-humidity"></span></p>
+                  <p>
+                     UV Index: <span id="current-uv"></span>
+                     <span class="badge" id="uv-badge"></span>
+                  </p>
+               </div>
+               <!-- 5 day forecast -->
+               <div>
+                  <h3>5-Day Forecast:</h3>
+                  <!-- forecast cards -->
+                  <div class="row row-cols-5">
+                     <!-- card -->
+                     <div class="col">
+                        <div
+                           class="card bg-dark text-light ps-3 pe-3"
+                           id="forecast-1"
+                        >
+                           <h3>
+                              <span id="forecast-1-date"></span>
+                           </h3>
+                           <span id="forecast-1-icon"></span>
+                           <p>Temp: <span id="forecast-1-temp"></span></p>
+                           <p>Wind: <span id="forecast-1-wind"></span></p>
+                           <p>
+                              Humidity: <span id="forecast-1-humidity"></span>
+                           </p>
+                           <p>
+                              UV Index: <span id="forecast-1-uv"></span>
+                              <span class="badge" id="uv-badge"></span>
+                           </p>
+                        </div>
+                     </div>
+                     <!-- card -->
+                     <div class="col">
+                        <div
+                           class="card bg-dark text-light ps-3 pe-3"
+                           id="forecast-2"
+                        >
+                           <h3>
+                              <span id="forecast-2-date"></span>
+                           </h3>
+                           <span id="forecast-2-icon"></span>
+                           <p>Temp: <span id="forecast-2-temp"></span></p>
+                           <p>Wind: <span id="forecast-2-wind"></span></p>
+                           <p>
+                              Humidity: <span id="forecast-2-humidity"></span>
+                           </p>
+                           <p>
+                              UV Index: <span id="forecast-2-uv"></span>
+                              <span class="badge" id="uv-badge"></span>
+                           </p>
+                        </div>
+                     </div>
+                     <!-- card -->
+                     <div class="col">
+                        <div
+                           class="card bg-dark text-light ps-3 pe-3"
+                           id="forecast-3"
+                        >
+                           <h3>
+                              <span id="forecast-3-date"></span>
+                           </h3>
+                           <span id="forecast-3-icon"></span>
+                           <p>Temp: <span id="forecast-3-temp"></span></p>
+                           <p>Wind: <span id="forecast-3-wind"></span></p>
+                           <p>
+                              Humidity: <span id="forecast-3-humidity"></span>
+                           </p>
+                           <p>
+                              UV Index: <span id="forecast-3-uv"></span>
+                              <span class="badge" id="uv-badge"></span>
+                           </p>
+                        </div>
+                     </div>
+                     <!-- card -->
+                     <div class="col">
+                        <div
+                           class="card bg-dark text-light ps-3 pe-3"
+                           id="forecast-4"
+                        >
+                           <h3>
+                              <span id="forecast-4-date"></span>
+                           </h3>
+                           <span id="forecast-4-icon"></span>
+                           <p>Temp: <span id="forecast-4-temp"></span></p>
+                           <p>Wind: <span id="forecast-4-wind"></span></p>
+                           <p>
+                              Humidity: <span id="forecast-4-humidity"></span>
+                           </p>
+                           <p>
+                              UV Index: <span id="forecast-4-uv"></span>
+                              <span class="badge" id="uv-badge"></span>
+                           </p>
+                        </div>
+                     </div>
+                     <!-- card -->
+                     <div class="col">
+                        <div
+                           class="card bg-dark text-light ps-3 pe-3"
+                           id="forecast-5"
+                        >
+                           <h3>
+                              <span id="forecast-5-date"></span>
+                           </h3>
+                           <span id="forecast-5-icon"></span>
+                           <p>Temp: <span id="forecast-5-temp"></span></p>
+                           <p>Wind: <span id="forecast-5-wind"></span></p>
+                           <p>
+                              Humidity: <span id="forecast-5-humidity"></span>
+                           </p>
+                           <p>
+                              UV Index: <span id="forecast-5-uv"></span>
+                              <span class="badge" id="uv-badge"></span>
+                           </p>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </main>
       <script
          src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"
          integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ=="
@@ -27,6 +185,6 @@
          crossorigin="anonymous"
          referrerpolicy="no-referrer"
       ></script>
-      <script src="./assets/script.js"></script>
+      <script src="./assets/js/script.js"></script>
    </body>
 </html>
