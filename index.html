@@ -46,15 +46,17 @@
                <!-- current weather -->
                <div class="border border-1 border-dark p-2">
                   <h2>
-                     <span id="current-city"></span>
-                     <span id="current-date"></span>
-                     <span id="current-icon"></span>
+                     <span id="current-city">--</span>
+                     (
+                     <span data-date="0"></span>
+                     )
+                     <span data-icon="0"></span>
                   </h2>
-                  <p>Temp: <span id="current-temp"></span></p>
-                  <p>Wind: <span id="current-wind"></span></p>
-                  <p>Humidity: <span id="current-humidity"></span></p>
+                  <p>Temp: <span data-temp="0">--</span></p>
+                  <p>Wind: <span data-wind="0">--</span></p>
+                  <p>Humidity: <span data-humidity="0">--</span></p>
                   <p>
-                     UV Index: <span id="current-uv"></span>
+                     UV Index: <span id="uv">--</span>
                      <span class="badge" id="uv-badge"></span>
                   </p>
                </div>
@@ -67,107 +69,68 @@
                      <div class="col">
                         <div
                            class="card bg-dark text-light ps-3 pe-3"
-                           id="forecast-1"
+                           data-="forecast-1"
                         >
-                           <h3>
-                              <span id="forecast-1-date"></span>
-                           </h3>
-                           <span id="forecast-1-icon"></span>
-                           <p>Temp: <span id="forecast-1-temp"></span></p>
-                           <p>Wind: <span id="forecast-1-wind"></span></p>
-                           <p>
-                              Humidity: <span id="forecast-1-humidity"></span>
-                           </p>
-                           <p>
-                              UV Index: <span id="forecast-1-uv"></span>
-                              <span class="badge" id="uv-badge"></span>
-                           </p>
+                           <h4 data-date="1"></h4>
+                           <div data-icon="1"></div>
+                           <p>Temp: <span data-temp="1">--</span></p>
+                           <p>Wind: <span data-wind="1">--</span></p>
+                           <p>Humidity: <span data-humidity="1">--</span></p>
                         </div>
                      </div>
                      <!-- card -->
                      <div class="col">
                         <div
                            class="card bg-dark text-light ps-3 pe-3"
-                           id="forecast-2"
+                           data-="forecast-2"
                         >
-                           <h3>
-                              <span id="forecast-2-date"></span>
-                           </h3>
-                           <span id="forecast-2-icon"></span>
-                           <p>Temp: <span id="forecast-2-temp"></span></p>
-                           <p>Wind: <span id="forecast-2-wind"></span></p>
-                           <p>
-                              Humidity: <span id="forecast-2-humidity"></span>
-                           </p>
-                           <p>
-                              UV Index: <span id="forecast-2-uv"></span>
-                              <span class="badge" id="uv-badge"></span>
-                           </p>
+                           <h4 data-date="2"></h4>
+                           <div data-icon="2"></div>
+                           <p>Temp: <span data-temp="2">--</span></p>
+                           <p>Wind: <span data-wind="2">--</span></p>
+                           <p>Humidity: <span data-humidity="2">--</span></p>
                         </div>
                      </div>
                      <!-- card -->
                      <div class="col">
                         <div
                            class="card bg-dark text-light ps-3 pe-3"
-                           id="forecast-3"
+                           data-="forecast-3"
                         >
-                           <h3>
-                              <span id="forecast-3-date"></span>
-                           </h3>
-                           <span id="forecast-3-icon"></span>
-                           <p>Temp: <span id="forecast-3-temp"></span></p>
-                           <p>Wind: <span id="forecast-3-wind"></span></p>
-                           <p>
-                              Humidity: <span id="forecast-3-humidity"></span>
-                           </p>
-                           <p>
-                              UV Index: <span id="forecast-3-uv"></span>
-                              <span class="badge" id="uv-badge"></span>
-                           </p>
+                           <h4 data-date="3"></h4>
+                           <div data-icon="3"></div>
+                           <p>Temp: <span data-temp="3">--</span></p>
+                           <p>Wind: <span data-wind="3">--</span></p>
+                           <p>Humidity: <span data-humidity="3">--</span></p>
                         </div>
                      </div>
                      <!-- card -->
                      <div class="col">
                         <div
                            class="card bg-dark text-light ps-3 pe-3"
-                           id="forecast-4"
+                           data-="forecast-4"
                         >
-                           <h3>
-                              <span id="forecast-4-date"></span>
-                           </h3>
-                           <span id="forecast-4-icon"></span>
-                           <p>Temp: <span id="forecast-4-temp"></span></p>
-                           <p>Wind: <span id="forecast-4-wind"></span></p>
-                           <p>
-                              Humidity: <span id="forecast-4-humidity"></span>
-                           </p>
-                           <p>
-                              UV Index: <span id="forecast-4-uv"></span>
-                              <span class="badge" id="uv-badge"></span>
-                           </p>
+                           <h4 data-date="4"></h4>
+                           <div data-icon="4"></div>
+                           <p>Temp: <span data-temp="4">--</span></p>
+                           <p>Wind: <span data-wind="4">--</span></p>
+                           <p>Humidity: <span data-humidity="4">--</span></p>
                         </div>
                      </div>
                      <!-- card -->
                      <div class="col">
                         <div
                            class="card bg-dark text-light ps-3 pe-3"
-                           id="forecast-5"
+                           data-="forecast-1"
                         >
-                           <h3>
-                              <span id="forecast-5-date"></span>
-                           </h3>
-                           <span id="forecast-5-icon"></span>
-                           <p>Temp: <span id="forecast-5-temp"></span></p>
-                           <p>Wind: <span id="forecast-5-wind"></span></p>
-                           <p>
-                              Humidity: <span id="forecast-5-humidity"></span>
-                           </p>
-                           <p>
-                              UV Index: <span id="forecast-5-uv"></span>
-                              <span class="badge" id="uv-badge"></span>
-                           </p>
+                           <h4 data-date="5"></h4>
+                           <div data-icon="5"></div>
+                           <p>Temp: <span data-temp="5">--</span></p>
+                           <p>Wind: <span data-wind="5">--</span></p>
+                           <p>Humidity: <span data-humidity="5">--</span></p>
                         </div>
                      </div>
+                     <!-- cards end -->
                   </div>
                </div>
             </div>
@@ -176,6 +139,12 @@
       <script
          src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"
          integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ=="
+         crossorigin="anonymous"
+         referrerpolicy="no-referrer"
+      ></script>
+      <script
+         src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment.min.js"
+         integrity="sha512-qTXRIMyZIFb8iQcfjXWCO8+M5Tbc38Qi5WzdPOYZHIlZpzBHG3L3by84BBBOiRGiEb7KKtAOAs5qYdUiZiQNNQ=="
          crossorigin="anonymous"
          referrerpolicy="no-referrer"
       ></script>
