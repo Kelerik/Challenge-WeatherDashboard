@@ -26,7 +26,7 @@ function loadLocalStorage() {
 function fetchWeather(cityInput) {
    // fetch coordinates of the city
    fetch(
-      "http://api.openweathermap.org/geo/1.0/direct?q=" +
+      "https://api.openweathermap.org/geo/1.0/direct?q=" +
          cityInput +
          "&limit=1&appid=" +
          apiKey
