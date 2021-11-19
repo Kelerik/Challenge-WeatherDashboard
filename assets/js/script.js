@@ -1,4 +1,25 @@
+var searchHistory = [];
 var apiKey = "6a5355d562381f240b2e68c6e7e42b99";
+
+// save localstorage
+function saveLocalStorage() {
+   localStorage.setItem(
+      "weatherDashboardHistory",
+      JSON.stringify(searchHistory)
+   );
+}
+
+// load localstorage
+function loadLocalStorage() {
+   var loadedData = JSON.parse(localStorage.getItem("weatherDashboardHistory"));
+   if (loadedData != null) {
+      console.log(loadedData);
+      // loop backwards because items get prepended to the list
+      loadedData.reverse().forEach(function (item) {
+         addHistory(item);
+      });
+   }
+}
 
 // fetch data from the OpenWeather API
 // uses nested fetch calls to convert city name to coordinates, then search weather for the coordinates
@@ -34,7 +55,7 @@ function fetchWeather(cityInput) {
                            // SUCCESS: EXECUTE FUNCTION
                            console.log(data);
                            addHistory(cityName);
-                           updateWeather(data);
+                           updateWeather(cityName, data);
                         } else {
                            alert("Error: " + data.message);
                         }
@@ -59,13 +80,43 @@ function fetchWeather(cityInput) {
       });
 }
 
-// update current city name and add to search history
+// add to search history
 function addHistory(name) {
-   $("#current-city").text(name);
+   // check if not already in history
+   if ($("button[data-search='" + name + "']").length === 0) {
+      // add button element to page
+      $("#history").prepend(
+         $(
+            "<button data-search='" +
+               name +
+               "' class='btn btn-secondary mb-0'>" +
+               name +
+               "</button>"
+         )
+      );
+      // if search history is maxed, remove the oldest item
+      if (searchHistory.length >= 10) {
+         $("button[data-search]").last().remove();
+      }
+   }
+
+   // if already in history, move it to top
+   else {
+      $("#history").prepend($("button[data-search='" + name + "']"));
+   }
+
+   // rebuild array of search history
+   searchHistory = [];
+   $("button[data-search]").each(function () {
+      searchHistory.push($(this).text());
+   });
+
+   // save
+   saveLocalStorage();
 }
 
 // update the elements on the page
-function updateWeather(dataObject) {
+function updateWeather(name, dataObject) {
    // get "current" UV Index  (not displaying daily forecast for this)
    var uvi = [dataObject.current.uvi];
    // build the arrays, the first item being the "current" weather data
@@ -85,7 +136,10 @@ function updateWeather(dataObject) {
       windArray.push(dataObject.daily[i].wind_speed);
       humidityArray.push(dataObject.daily[i].humidity);
    }
+
    // update ALL THE ELEMENTS
+   // city name
+   $("#current-city").text(name);
    // UV index (current day only)
    $("#uv").text(uvi);
    if (uvi < 2) {
@@ -135,3 +189,12 @@ $("#city-input").on("submit", function (event) {
    $(this).find("input").val("");
    fetchWeather(formInput);
 });
+
+// search history button listener
+$("#history").on("click", "button", function () {
+   fetchWeather($(this).attr("data-search"));
+   $("input").trigger("focus");
+});
+
+// load
+loadLocalStorage();
